@@ -36,7 +36,8 @@ if __name__ == '__main__':
         print (*A,sep=' ')
         if my_args.file:
             with open(my_args.file.name,'w') as out:
-                out.write(str(A)+'\n')
+                for el in A:
+                    out.write(str(el)+'\n')
     else:
         if my_args.file:
             with open(my_args.file.name,'w') as out:
