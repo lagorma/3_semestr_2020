@@ -1,22 +1,24 @@
 #!/bin/python
 
 class Shape:
-    def width():
-        a=float(input('Введите ширину: '))
-        return a
-    def length():
-        b=float(input('Введите длину: '))
-        return b
+    def __init__(self,width,length):
+        self.width=width
+        self.length=length
+
 
 class Triangle(Shape):
-    a=Shape.width()
-    b=Shape.length()
-    def area(a,b):
-        return 0,5*a*b
+    def area(self):
+        return (self.width*self.length)/2
+
     
 
 class Rectangle(Shape):
-    a=Shape.width()
-    b=Shape.length()
-    def area(a,b):
-        return a*b
+    def area(self):
+        return self.width*self.length
+
+if __name__=="__main__":
+    t=Triangle(5,3)
+    r=Rectangle(5,8)
+
+    print(t.area())
+    print(r.area())
