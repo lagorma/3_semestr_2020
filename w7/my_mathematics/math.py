@@ -28,7 +28,10 @@ class MyMath:
         try:
             #print(cls._complex())
             if cls._complex():
-                return '{}j'.format(math.sqrt(-x))
+                a=math.sqrt(-x)
+                if a.is_integer():
+                    a=int(a)
+                return '{}j'.format(a)
             else:
                 return math.sqrt(x)
         except ValueError:
