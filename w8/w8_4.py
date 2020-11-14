@@ -2,10 +2,8 @@
 from itertools import product
 
 def get_cartesian_product(a,b):
-    try:
-        return list(product(a,b))
-    except:
-        raise RuntimeError("Not implemented")
+    return list(product(a,b))
+
 
 '''
 Test for get_cartesian_product
