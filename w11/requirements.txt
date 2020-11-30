@@ -1,0 +1,5 @@
+aiohttp == 3.7.3
+fastapi == 0.61.2
+aiofile == 3.3.3
+re == 2.2.1
+

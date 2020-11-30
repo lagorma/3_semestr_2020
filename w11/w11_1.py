@@ -1,22 +1,25 @@
 #!/bin/python
 import asyncio
-import uvicorn
-from fastapi import FastAPI
-from main import main
+import aiohttp
+from concurrent.futures import ALL_COMPLETED
 
-async def server_request(i):
-    print(f'Requrest №{i} start')
-    await main()
-    print(f'Requrest №{i} stop')
+
+async def server_request(session,url,i):
+    async with session.get(url) as r:
+        print(f'Requrest №{i} start')
+        html = await r.text()
+        print(html)
+        print(f'Requrest №{i} stop')
+        return html
 
 
 async def func():
-    await asyncio.gather(*[server_request(i) for i in range(100)])
+    async with aiohttp.ClientSession() as session:
+        result = await asyncio.wait({server_request(session,'http://127.0.0.1:8000',i) for i in range(100)}, return_when=ALL_COMPLETED)
 
 
 if __name__ == "__main__":
     print('start')
     loop = asyncio.get_event_loop()
     loop.run_until_complete(func())
-    loop.close()
     print('stop')
