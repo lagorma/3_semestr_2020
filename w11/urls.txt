@@ -1,0 +1,3 @@
+https://yandex.ru/
+https://stackoverflow.com/questions/54787401/how-to-properly-use-asyncio-first-completed
+https://vk.com/
