@@ -1,0 +1,3 @@
+  <a class="installApp__link" href="https://vk.me/?act=dl">
+  <a class="button wide_button success" href="/join" rel="noopener">Зарегистрироваться</a>
+  <a href="/login?act=fb_sign" class="social_button"><i class="social_icon"></i>Войти через Facebook</a>
